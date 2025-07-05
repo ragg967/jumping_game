@@ -4,30 +4,59 @@ const PLATFORM: PackedScene = preload("res://scenes/platform.tscn")
 @onready var scoreBoard: RichTextLabel = get_node("/root/main/Score board/RichTextLabel")
 @onready var timer: Timer = $Timer
 @onready var platformSpawner: StaticBody2D = self.get_node("StaticBody2D")
+
+var platformPool: Array[RigidBody2D] = []
+var activePlatforms: Array[RigidBody2D] = []
 var platformsSpawned: int = 0
 var platformSpeeds: int = randi_range(-50, -100)
+var poolSize: int = 10
+var rightSpawnX: float = 728.0
+var leftDespawnX: float = -856.0
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	# Create platform pool
+	for i in range(poolSize):
+		var platform := PLATFORM.instantiate()
+		add_child(platform)
+		platform.position.x = rightSpawnX + 300 + (i * 100)  # Start offscreen
+		platform.position.y = -1000  # Start way off screen
+		platform.linear_velocity = Vector2.ZERO
+		platformPool.append(platform)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	# Check for platforms that need to be recycled
+	for platform in activePlatforms.duplicate():
+		if platform.global_position.x <= leftDespawnX:
+			recyclePlatform(platform)
 
 
 func _spawn_platform() -> void:
-	var platformInstant := PLATFORM.instantiate()
-	add_child(platformInstant)
-	platformsSpawned += 1
-	platformInstant.global_position.y = randi_range(
-		platformSpawner.global_position.y - 62.5, platformSpawner.global_position.y + 62.5
-	)
-	platformInstant.linear_velocity.x = platformSpeeds
-	scoreBoard.score += .25
-	update_difficulty()
+	if platformPool.size() > 0:
+		var platform = platformPool.pop_back()
+		activePlatforms.append(platform)
+
+		platformsSpawned += 1
+		platform.global_position.x = rightSpawnX
+		platform.global_position.y = randi_range(
+			platformSpawner.global_position.y - 62.5, platformSpawner.global_position.y + 62.5
+		)
+		platform.linear_velocity.x = platformSpeeds
+		platform.linear_velocity.y = 0
+
+		scoreBoard.score += 0.25
+		update_difficulty()
+
+
+func recyclePlatform(platform: RigidBody2D) -> void:
+	activePlatforms.erase(platform)
+	platformPool.append(platform)
+
+	# Move platform offscreen and stop it
+	platform.position.x = rightSpawnX + 300
+	platform.position.y = -1000
+	platform.linear_velocity = Vector2.ZERO
 
 
 func update_difficulty() -> void:

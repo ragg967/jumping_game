@@ -15,6 +15,7 @@
 position = Vector2(0, 400)
 
 [node name="Camera" parent="." instance=ExtResource("3_sugp2")]
+zoom = Vector2(0.54, 0.54)
 
 [node name="Platform despawner" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(-856, 0)
@@ -26,12 +27,14 @@ position = Vector2(728, 0)
 visible = false
 
 [node name="Score board" parent="." instance=ExtResource("7_o6xl0")]
-offset_left = -522.0
-offset_top = -295.0
-offset_right = -522.0
-offset_bottom = -295.0
+offset_left = -515.0
+offset_top = -305.0
+offset_right = -515.0
+offset_bottom = -305.0
 
 [node name="Platform" parent="." instance=ExtResource("1_o5qli")]
+z_index = -1
 
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+z_index = -1
 position = Vector2(0, -80)

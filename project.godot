@@ -8,12 +8,24 @@
 
 config_version=5
 
+[GDScript_Formatter]
+
+format_on_save=true
+
 [application]
 
 config/name="Jumping Game"
 run/main_scene="uid://dm8rig0q3e010"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://assets/icon.svg"
+boot_splash/image="uid://d0s7fd1gvg17l"
+config/icon="uid://cebftlf0jy03u"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
@@ -60,3 +72,7 @@ restart={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
+textures/default_filters/use_nearest_mipmap_filter=true
+textures/decals/filter=2
+textures/light_projectors/filter=2
+2d/snap/snap_2d_transforms_to_pixel=true

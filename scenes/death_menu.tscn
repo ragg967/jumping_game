@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5nxdam5lql7n"]
+[gd_scene load_steps=4 format=3 uid="uid://b5nxdam5lql7n"]
 
 [ext_resource type="Script" uid="uid://cvop8rux3lwfo" path="res://scripts/death_menu.gd" id="1_latkk"]
+[ext_resource type="FontFile" uid="uid://byhfk1n2gkgt5" path="res://assets/pixel_operator/PixelOperatorMono.ttf" id="2_gm7js"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_latkk"]
 
@@ -24,8 +25,10 @@ offset_right = 123.5
 offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/bold_font_size = 32
+theme_override_fonts/italics_font = ExtResource("2_gm7js")
+theme_override_fonts/bold_font = ExtResource("2_gm7js")
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/bold_font_size = 64
 bbcode_enabled = true
 text = "[b]YOU DIED[/b]
 [i]press enter to restart[/i]

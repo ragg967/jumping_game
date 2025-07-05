@@ -1,0 +1,4 @@
+GDScript_Formatter/custom_settings_enabled=false
+GDScript_Formatter/line_length=175
+GDScript_Formatter/format_on_save=true
+GDScript_Formatter/fast_but_unsafe=false

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <svg version="1.1" width="256" height="32" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
 <rect x="0" y="0" width="256" height="1" fill="#000000" />
-<rect x="0" y="1" width="1" height="31" fill="#000000" />
-<rect x="1" y="1" width="254" height="30" fill="#FFFFFF" />
-<rect x="255" y="1" width="1" height="31" fill="#000000" />
-<rect x="1" y="31" width="254" height="1" fill="#000000" />
+<rect x="0" y="1" width="2" height="31" fill="#000000" />
+<rect x="2" y="1" width="252" height="30" fill="#FFFFFF" />
+<rect x="254" y="1" width="2" height="31" fill="#000000" />
+<rect x="2" y="31" width="252" height="1" fill="#000000" />
 </svg>

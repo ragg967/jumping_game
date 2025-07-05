@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceqekv63wpeju"]
+[gd_scene load_steps=3 format=3 uid="uid://ceqekv63wpeju"]
 
 [ext_resource type="Script" uid="uid://15kyt14bgrn" path="res://scripts/score_board.gd" id="1_ek31y"]
+[ext_resource type="FontFile" uid="uid://byhfk1n2gkgt5" path="res://assets/pixel_operator/PixelOperatorMono.ttf" id="1_gjtyh"]
 
 [node name="Score board" type="Control"]
 layout_mode = 3
@@ -19,6 +20,8 @@ offset_right = 42.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_gjtyh")
+theme_override_font_sizes/normal_font_size = 32
 text = "Score: 0"
 fit_content = true
 scroll_active = false

@@ -23,35 +23,35 @@ func _spawn_platform() -> void:
 	platformsSpawned += 1
 	platformInstant.global_position.y = randf_range(-250, 250)
 	platformInstant.linear_velocity.x = platformSpeed
-	scoreBoard.score += 1
 	update_difficulty()
 
 
 func update_difficulty() -> void:
-	match platformsSpawned:
+	match scoreBoard.score:
 		1:
-			timer.wait_time = randf_range(4.5, 5)
-		5:
-			timer.wait_time = randf_range(4, 4.5)
-			platformSpeed = randf_range(-100, -300)
-		15:
-			timer.wait_time = randf_range(3.5, 4)
-			platformSpeed = randf_range(-150, -400)
-		25:
-			timer.wait_time = randf_range(3, 3.5)
-			platformSpeed = randf_range(-200, -500)
-		35:
-			timer.wait_time = randf_range(2.5, 3)
-			platformSpeed = randf_range(-250, -600)
-		45:
-			timer.wait_time = randf_range(2, 2.5)
-			platformSpeed = randf_range(-300, -700)
-		55:
-			timer.wait_time = randf_range(1.5, 2)
-			platformSpeed = randf_range(-350, -800)
-		65:
-			timer.wait_time = randf_range(1, 1.5)
-			platformSpeed = randf_range(-400, -900)
-		75:
-			timer.wait_time = randf_range(0.5, 1)
-			platformSpeed = randf_range(-450, -1000)
+			timer.wait_time = randf_range(2.8, 3.2)
+			platformSpeed = randf_range(-80, -120)
+		10:
+			timer.wait_time = randf_range(2.4, 2.8)
+			platformSpeed = randf_range(-100, -150)
+		20:
+			timer.wait_time = randf_range(2.0, 2.4)
+			platformSpeed = randf_range(-120, -180)
+		30:
+			timer.wait_time = randf_range(1.6, 2.0)
+			platformSpeed = randf_range(-140, -210)
+		40:
+			timer.wait_time = randf_range(1.2, 1.6)
+			platformSpeed = randf_range(-160, -240)
+		50:
+			timer.wait_time = randf_range(0.8, 1.2)
+			platformSpeed = randf_range(-180, -270)
+		60:
+			timer.wait_time = randf_range(0.6, 1.0)
+			platformSpeed = randf_range(-200, -300)
+		70:
+			timer.wait_time = randf_range(0.4, 0.8)
+			platformSpeed = randf_range(-220, -330)
+		80:
+			timer.wait_time = randf_range(0.3, 0.6)
+			platformSpeed = randf_range(-240, -360)

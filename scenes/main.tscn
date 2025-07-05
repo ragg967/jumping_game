@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5nxdam5lql7n" path="res://scenes/death_menu.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://kweh7pjkqckq" path="res://scenes/death_box.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ceqekv63wpeju" path="res://scenes/score_board.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://bmnxhqau7cnwe" path="res://scenes/platform_despawner.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" path="res://scenes/platform_despawner.tscn" id="8_tipki"]
 
 [node name="main" type="Node"]
 

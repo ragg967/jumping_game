@@ -1,7 +1,6 @@
 extends Area2D
 
-@onready var player: CharacterBody2D = get_node("../Player")
-@onready var deathMenu: Control = get_node("../Death menu")
+var restart: StringName = &"restart"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +13,6 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	if body.is_in_group("Player"):
-		player.isDead = true
-		deathMenu.isVisible = true
+		GameManager.game_over()

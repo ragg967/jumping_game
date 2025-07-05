@@ -1,7 +1,5 @@
 extends RichTextLabel
 
-var score: int = 0
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,8 +8,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	text = "Score: %d" % score
+	text = "Score: %d" % GameManager.score
 
 
 func _update_score() -> void:
-	score += 1
+	GameManager.update_score()

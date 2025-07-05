@@ -26,7 +26,7 @@ func _spawn_platform() -> void:
 
 
 func update_difficulty() -> void:
-	var score = scoreBoard.score
+	var score = GameManager.score
 
 	# Aggressive difficulty scaling based on score
 	var difficulty_multiplier = 1.0 + (score * 0.12)  # 12% increase per point
@@ -42,7 +42,7 @@ func update_difficulty() -> void:
 
 
 func get_current_speed() -> float:
-	var score = scoreBoard.score
+	var score = GameManager.score
 	var difficulty_multiplier = 1.0 + (score * 0.18)  # 18% speed increase per point
 
 	var current_speed = baseSpeed * difficulty_multiplier

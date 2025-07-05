@@ -27,36 +27,34 @@ func _spawn_platform() -> void:
 	)
 	platformInstant.linear_velocity.x = platformSpeeds
 	scoreBoard.score += .25
-	_update_difficulty()
+	update_difficulty()
 
 
-func _update_difficulty() -> void:
+func update_difficulty() -> void:
 	match platformsSpawned:
 		1:
-			timer.wait_time = 5
-		2:
 			timer.wait_time = randf_range(4.5, 5)
 		5:
 			timer.wait_time = randf_range(4, 4.5)
-			platformSpeeds = randi_range(-75, -125)
+			platformSpeeds = randi_range(-150, -250)
 		15:
 			timer.wait_time = randf_range(3.5, 4)
-			platformSpeeds = randi_range(-100, -150)
+			platformSpeeds = randi_range(-200, -300)
 		25:
 			timer.wait_time = randf_range(3, 3.5)
-			platformSpeeds = randi_range(-125, -175)
+			platformSpeeds = randi_range(-250, -350)
 		35:
 			timer.wait_time = randf_range(2.5, 3)
-			platformSpeeds = randi_range(-150, -200)
+			platformSpeeds = randi_range(-300, -400)
 		45:
 			timer.wait_time = randf_range(2, 2.5)
-			platformSpeeds = randi_range(-175, -225)
+			platformSpeeds = randi_range(-350, -450)
 		55:
 			timer.wait_time = randf_range(1.5, 2)
-			platformSpeeds = randi_range(-200, -250)
+			platformSpeeds = randi_range(-400, -500)
 		65:
 			timer.wait_time = randf_range(1, 1.5)
-			platformSpeeds = randi_range(-225, -275)
+			platformSpeeds = randi_range(-450, -550)
 		75:
 			timer.wait_time = randf_range(0.5, 1)
-			platformSpeeds = randi_range(-250, -300)
+			platformSpeeds = randi_range(-500, -600)

@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmnxhqau7cnwe"]
+[gd_scene load_steps=3 format=3 uid="uid://bw5c783eshv4d"]
 
-[ext_resource type="Script" uid="uid://cs808jobri3se" path="res://scripts/platform_despawner.gd" id="1_xme1h"]
+[ext_resource type="Script" uid="uid://cs808jobri3se" path="res://scripts/platform_mover.gd" id="1_rhtor"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4afbt"]
 
-[node name="Platform despawner" type="Node2D"]
-script = ExtResource("1_xme1h")
+[node name="Platform mover" type="Node2D"]
+script = ExtResource("1_rhtor")
 
 [node name="Area2D" type="Area2D" parent="."]
 

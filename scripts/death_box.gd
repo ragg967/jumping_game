@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var player: CharacterBody2D = get_node("/root/main/Player")
-@onready var deathMenu: Control = get_node("/root/main/Death menu")
+@onready var player: CharacterBody2D = get_node("../Player")
+@onready var deathMenu: Control = get_node("../Death menu")
 
 
 # Called when the node enters the scene tree for the first time.

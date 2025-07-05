@@ -27,3 +27,8 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 script = ExtResource("1_ek31y")
+
+[node name="ScoreTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="ScoreTimer" to="RichTextLabel" method="_update_score"]

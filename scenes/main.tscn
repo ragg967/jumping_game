@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b5nxdam5lql7n" path="res://scenes/death_menu.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://kweh7pjkqckq" path="res://scenes/death_box.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://ceqekv63wpeju" path="res://scenes/score_board.tscn" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://bmnxhqau7cnwe" path="res://scenes/platform_despawner.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://bw5c783eshv4d" path="res://scenes/platform_mover.tscn" id="8_tipki"]
 
 [node name="main" type="Node"]
 
@@ -16,9 +16,6 @@ position = Vector2(0, 400)
 
 [node name="Camera" parent="." instance=ExtResource("3_sugp2")]
 zoom = Vector2(0.54, 0.54)
-
-[node name="Platform despawner" parent="." instance=ExtResource("8_tipki")]
-position = Vector2(-856, 0)
 
 [node name="Death menu" parent="." instance=ExtResource("5_tbgi4")]
 visible = false
@@ -37,13 +34,7 @@ offset_bottom = -305.0
 position = Vector2(0, -80)
 
 [node name="Platform spawner" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(728, 238)
+position = Vector2(728, 0)
 
-[node name="Platform spawner2" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(728, 50.5)
-
-[node name="Platform spawner3" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(729, -137)
-
-[node name="Platform spawner4" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(728, -324.5)
+[node name="Platform mover" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(-848, 0)

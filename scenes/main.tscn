@@ -20,9 +20,6 @@ zoom = Vector2(0.54, 0.54)
 [node name="Platform despawner" parent="." instance=ExtResource("8_tipki")]
 position = Vector2(-856, 0)
 
-[node name="Platform spawner" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(728, 0)
-
 [node name="Death menu" parent="." instance=ExtResource("5_tbgi4")]
 visible = false
 z_index = 1
@@ -39,5 +36,14 @@ offset_bottom = -305.0
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
 position = Vector2(0, -80)
 
+[node name="Platform spawner" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(728, 238)
+
 [node name="Platform spawner2" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(728, 0)
+position = Vector2(728, 50.5)
+
+[node name="Platform spawner3" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(729, -137)
+
+[node name="Platform spawner4" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(728, -324.5)

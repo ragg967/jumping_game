@@ -58,6 +58,12 @@ All visual assets are custom-made SVG graphics:
 
 ## 🚀 Installation & Running
 
+## 🎮 Play Online
+
+**[🕹️ Play Jumping Game in your browser!](https://ragg967.github.io/jumping_game/)**
+
+*No download required - play directly in your web browser!*
+
 ### For Players
 1. Download the latest release from the [Releases](https://github.com/ragg967/jumping_game/releases) page
 2. Extract the files

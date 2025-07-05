@@ -3,6 +3,9 @@ extends CharacterBody2D
 @export var speed: float = 300.0
 @export var jumpVelocity: float = -500.0
 var isDead: bool = false
+var input_left: StringName = &"moveLeft"
+var input_right: StringName = &"moveRight"
+var input_jump: StringName = &"jump"
 
 
 func _physics_process(delta: float) -> void:

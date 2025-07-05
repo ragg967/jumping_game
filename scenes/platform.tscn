@@ -8,7 +8,7 @@ size = Vector2(256, 32)
 [node name="Platform" type="RigidBody2D" groups=["Platform"]]
 collision_mask = 0
 gravity_scale = 0.0
-linear_velocity = Vector2(-25, 0)
+linear_velocity = Vector2(-50, 0)
 linear_damp_mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

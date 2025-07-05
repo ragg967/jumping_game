@@ -1,62 +1,57 @@
-extends Node2D
+extends Node
 
 const PLATFORM: PackedScene = preload("res://scenes/platform.tscn")
-@onready var scoreBoard: RichTextLabel = get_node("../Score board/RichTextLabel")
-@onready var speedTimer: Timer = $SpeedTimer
-@onready var spawnTimer: Timer = $SpawnTimer
-var platformSpeed: int = -100
-var timerTicks: int = 0
+@onready var scoreBoard: RichTextLabel = get_node("/root/main/Score board/RichTextLabel")
+@onready var timer: Timer = $Timer
+var platformsSpawned: int = 0
+var platformSpeed: float = randf_range(-50, -100)
 
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	timer.wait_time = randf_range(1, 3)
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var old_wait_time = speedTimer.wait_time
-	var old_speed = platformSpeed
-
-	# Update spawn rate and speed based on score
-	match scoreBoard.score:
-		1:
-			speedTimer.wait_time = randf_range(4.5, 5)
-			platformSpeed = randi_range(-100, -150)
-		5:
-			speedTimer.wait_time = randf_range(4, 4.5)
-			platformSpeed = randi_range(-100, -300)
-		15:
-			speedTimer.wait_time = randf_range(3.5, 4)
-			platformSpeed = randi_range(-150, -400)
-		25:
-			speedTimer.wait_time = randf_range(3, 3.5)
-			platformSpeed = randi_range(-200, -500)
-		35:
-			speedTimer.wait_time = randf_range(2.5, 3)
-			platformSpeed = randi_range(-250, -600)
-		45:
-			speedTimer.wait_time = randf_range(2, 2.5)
-			platformSpeed = randi_range(-300, -700)
-		55:
-			speedTimer.wait_time = randf_range(1.5, 2)
-			platformSpeed = randi_range(-350, -800)
-		65:
-			speedTimer.wait_time = randf_range(1, 1.5)
-			platformSpeed = randi_range(-400, -900)
-		75:
-			speedTimer.wait_time = randf_range(0.5, 1)
-			platformSpeed = randi_range(-450, -1000)
-
-	# Restart timer if wait_time changed
-	if speedTimer.wait_time != old_wait_time:
-		speedTimer.start()
+	pass
 
 
 func _spawn_platform() -> void:
-	if timerTicks <= 10:
-		spawnTimer.wait_time = randi_range(6, 10)
-		timerTicks += 1
-		# Spawn platform and add it to the main scene, not as child of spawner
-		var platformInstant: RigidBody2D = PLATFORM.instantiate()
-		get_parent().add_child(platformInstant)  # Add to main scene
+	var platformInstant := PLATFORM.instantiate()
+	add_child(platformInstant)
+	platformsSpawned += 1
+	platformInstant.global_position.y = randf_range(-250, 250)
+	platformInstant.linear_velocity.x = platformSpeed
+	scoreBoard.score += 1
+	update_difficulty()
 
-		# Set platform position and velocity
-		platformInstant.global_position = Vector2(global_position.x, randf_range(-300, 300))
-		platformInstant.linear_velocity = Vector2(platformSpeed, 0)
-	else:
-		spawnTimer.stop()
+
+func update_difficulty() -> void:
+	match platformsSpawned:
+		1:
+			timer.wait_time = randf_range(4.5, 5)
+		5:
+			timer.wait_time = randf_range(4, 4.5)
+			platformSpeed = randf_range(-100, -300)
+		15:
+			timer.wait_time = randf_range(3.5, 4)
+			platformSpeed = randf_range(-150, -400)
+		25:
+			timer.wait_time = randf_range(3, 3.5)
+			platformSpeed = randf_range(-200, -500)
+		35:
+			timer.wait_time = randf_range(2.5, 3)
+			platformSpeed = randf_range(-250, -600)
+		45:
+			timer.wait_time = randf_range(2, 2.5)
+			platformSpeed = randf_range(-300, -700)
+		55:
+			timer.wait_time = randf_range(1.5, 2)
+			platformSpeed = randf_range(-350, -800)
+		65:
+			timer.wait_time = randf_range(1, 1.5)
+			platformSpeed = randf_range(-400, -900)
+		75:
+			timer.wait_time = randf_range(0.5, 1)
+			platformSpeed = randf_range(-450, -1000)

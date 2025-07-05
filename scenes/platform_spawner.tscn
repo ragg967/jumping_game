@@ -1,26 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbpawdr8g4rfu"]
+[gd_scene load_steps=2 format=3 uid="uid://dbpawdr8g4rfu"]
 
 [ext_resource type="Script" uid="uid://knaoap1nkeyi" path="res://scripts/platform_spawner.gd" id="1_kyewn"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kyewn"]
 
 [node name="Platform spawner" type="Node2D"]
 script = ExtResource("1_kyewn")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_kyewn")
-
-[node name="SpeedTimer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="."]
 autostart = true
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[connection signal="timeout" from="SpeedTimer" to="." method="_spawn_platform"]
-[connection signal="timeout" from="SpawnTimer" to="." method="_spawn_platform"]
+[connection signal="timeout" from="Timer" to="." method="_spawn_platform"]

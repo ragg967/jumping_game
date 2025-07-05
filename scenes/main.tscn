@@ -25,16 +25,19 @@ position = Vector2(728, 0)
 
 [node name="Death menu" parent="." instance=ExtResource("5_tbgi4")]
 visible = false
+z_index = 1
 
 [node name="Score board" parent="." instance=ExtResource("7_o6xl0")]
+z_index = 1
 offset_left = -515.0
 offset_top = -305.0
 offset_right = -515.0
 offset_bottom = -305.0
 
 [node name="Platform" parent="." instance=ExtResource("1_o5qli")]
-z_index = -1
 
 [node name="Player" parent="." instance=ExtResource("2_0wfyh")]
-z_index = -1
 position = Vector2(0, -80)
+
+[node name="Platform spawner2" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(728, 0)

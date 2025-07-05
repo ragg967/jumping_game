@@ -23,7 +23,7 @@ func _spawn_platform() -> void:
 	platformsSpawned += 1
 	platformInstant.global_position.y = randi_range(-250, 250)
 	platformInstant.linear_velocity.x = platformSpeeds
-	scoreBoard.score += 1
+	scoreBoard.score += .5
 	_change_timer_duration()
 
 

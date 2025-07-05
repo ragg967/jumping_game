@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://coqjpod5nv8yt"]
+
+[ext_resource type="Texture2D" uid="uid://03351hokbkj3" path="res://assets/platform.svg" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ajho"]
+size = Vector2(256, 32)
+
+[node name="Platform" type="RigidBody2D" groups=["Platform"]]
+collision_mask = 0
+gravity_scale = 0.0
+linear_velocity = Vector2(-25, 0)
+linear_damp_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5ajho")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ba0x2")

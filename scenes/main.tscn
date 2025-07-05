@@ -1,0 +1,37 @@
+[gd_scene load_steps=9 format=3 uid="uid://dm8rig0q3e010"]
+
+[ext_resource type="PackedScene" uid="uid://coqjpod5nv8yt" path="res://scenes/platform.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://d1g21tmf4rf5w" path="res://scenes/player.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://didv7i62mohyc" path="res://scenes/camera.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dbpawdr8g4rfu" path="res://scenes/platform_spawner.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b5nxdam5lql7n" path="res://scenes/death_menu.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://kweh7pjkqckq" path="res://scenes/death_box.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://ceqekv63wpeju" path="res://scenes/score_board.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bmnxhqau7cnwe" path="res://scenes/platform_despawner.tscn" id="8_tipki"]
+
+[node name="main" type="Node"]
+
+[node name="Death box" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(0, 400)
+
+[node name="Camera" parent="." instance=ExtResource("3_sugp2")]
+
+[node name="Platform despawner" parent="." instance=ExtResource("8_tipki")]
+position = Vector2(-856, 0)
+
+[node name="Platform spawner" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(728, 0)
+
+[node name="Death menu" parent="." instance=ExtResource("5_tbgi4")]
+visible = false
+
+[node name="Score board" parent="." instance=ExtResource("7_o6xl0")]
+offset_left = -522.0
+offset_top = -295.0
+offset_right = -522.0
+offset_bottom = -295.0
+
+[node name="Platform" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="Player" parent="." instance=ExtResource("2_0wfyh")]
+position = Vector2(0, -80)

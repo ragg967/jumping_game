@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5nxdam5lql7n"]
+
+[ext_resource type="Script" uid="uid://cvop8rux3lwfo" path="res://scripts/death_menu.gd" id="1_latkk"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_latkk"]
+
+[node name="Death menu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_latkk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -51.0
+offset_right = 123.5
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "[b]YOU DIED[/b]
+[i]press enter to restart[/i]
+
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0, 0, 0, 0.54902)
+show_behind_parent = true
+scale = Vector2(5000, 2201.83)
+mesh = SubResource("QuadMesh_latkk")
